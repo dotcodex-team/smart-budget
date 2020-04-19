@@ -1,5 +1,5 @@
 import React, { useState,useEffect,useMemo,useContext } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button } from 'rbx'
 import { createUseStyles } from 'react-jss'
 
 const useStyles = createUseStyles({
@@ -40,7 +40,7 @@ export default function Home() {
       <br />
       <br />
       <div>
-        <Button onClick={()=>setStatus(!status)} primary>
+        <Button onClick={()=>setStatus(!status)} color="success">
           Cambiar el status activa el efecto
         </Button>
         <span> { status ? 'Activo' : 'Inactivo' } </span>
