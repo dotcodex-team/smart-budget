@@ -1,5 +1,5 @@
 import App from 'next/app'
-import 'semantic-ui-css/semantic.min.css'
+import 'bulma-pro/css/bulma.css'
 
 export default class MyApp extends App {
   componentDidMount() {

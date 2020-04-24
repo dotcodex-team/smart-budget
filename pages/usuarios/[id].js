@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button } from 'rbx'
 import { useRouter } from 'next/router'
 import { createUseStyles } from 'react-jss'
 
