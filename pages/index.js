@@ -1,6 +1,8 @@
 import React, { useState,useEffect,useMemo,useContext } from 'react'
 import { Button } from 'rbx'
 import { createUseStyles } from 'react-jss'
+import Layout from '../components/Layout'
+
 
 const useStyles = createUseStyles({
   root : {
@@ -33,8 +35,10 @@ export default function Home() {
   }
 
   return (
+<Layout>
     <div className={classes.root}>
-      <Button onClick={increase} primary>
+      
+      <Button onClick={increase} color="primary">
         {numberAndValor}
       </Button>
       <br />
@@ -46,5 +50,6 @@ export default function Home() {
         <span> { status ? 'Activo' : 'Inactivo' } </span>
       </div>
     </div>
+    </Layout>
   )
 }
