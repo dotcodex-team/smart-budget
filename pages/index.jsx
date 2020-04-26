@@ -13,6 +13,7 @@ const useStyles = createUseStyles({
 
 export default function Home() {
   const classes = useStyles();
+
   const valor = 10;
   // data
   const [number, setNumber] = useState(0);
