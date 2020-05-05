@@ -1,55 +1,52 @@
 import React, { useState, useEffect, useMemo } from 'react';
 // import { Button } from 'rbx';
-import { createUseStyles } from 'react-jss';
+import { makeStyles } from '@material-ui/core/styles';
+import { Button, Grid } from '@material-ui/core';
 import Layout from '@components/Layout';
+import Link from 'next/link';
 
-const useStyles = createUseStyles({
+const useStyles = makeStyles({
   root: {
     padding: 15,
-    background: '#f8f8f8',
-    width: 340
+    background: 'green',
+    height: 500
   }
 });
 
 export default function Home() {
   const classes = useStyles();
-  const valor = 10;
-  // data
-  const [number, setNumber] = useState(0);
-  const [status, setStatus] = useState(false);
-
-  // computed
-  const numberAndValor = useMemo(() => number + valor, [number]);
-  // method
-  function increase() {
-    setNumber(number + 1);
-  }
-
-  // mounted
-  useEffect(() => {
-    increase();
-  }, [status]);
 
   return (
     <Layout>
-      <div className={classes.root}>
-        <button type="button" onClick={increase} className="button is-primary">
-          {numberAndValor}
-        </button>
-        <br />
-        <br />
-        <div>
-          <button
-            className="button is-info"
-            type="button"
-            onClick={() => setStatus(!status)}
-            color="success"
-          >
-            Cambiar el status activa el efecto
-          </button>
-          <span> {status ? 'Activo' : 'Inactivo'} </span>
-        </div>
-      </div>
+      <Grid
+        className={classes.root}
+        container
+        justify="space-around"
+        alignItems="center"
+      >
+        <Grid item>
+          <Link href="/test">
+            <Button component="span" variant="contained" color="primary">
+              To the test
+            </Button>
+          </Link>
+        </Grid>
+        <Grid item>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+        </Grid>
+      </Grid>
     </Layout>
   );
 }
