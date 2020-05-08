@@ -7,7 +7,8 @@ import SignUp from '../components/register/SignUp';
 const useStyle = makeStyles({
   root: {
     padding: '0 7%',
-    height: '100vh'
+    height: '100vh',
+    backgroundColor: '#F0F4F3'
   },
   grid1: {
     background: '#4EB19C',

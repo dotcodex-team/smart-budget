@@ -8,13 +8,20 @@ const useStyle = makeStyles({
     margin: 20,
     marginTop: 0,
     marginLeft: '15%',
-    marginRight: '15%'
+    marginRight: '15%',
+    backgroundColor: '#F4F8F7'
   },
   button: {
     width: 300,
     color: 'white',
     height: 60,
     borderRadius: 30
+  },
+  underline: {
+    '&::before': {
+      borderBottomWidth: 2,
+      borderBottomColor: 'transparent'
+    }
   }
 });
 
@@ -44,19 +51,23 @@ const SignIn = () => {
             fullWidth
             id="outlined-basic"
             label="Email"
-            variant="outlined"
             name="email"
             onChange={handleChange}
             className={classes.input}
+            InputProps={{
+              classes: { underline: classes.underline }
+            }}
           />
           <TextField
             fullWidth
             id="outlined-basic"
             label="Password"
-            variant="outlined"
             name="password"
             onChange={handleChange}
             className={classes.input}
+            InputProps={{
+              classes: { underline: classes.underline }
+            }}
           />
           <Button
             variant="contained"
