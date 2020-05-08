@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 // import { Button } from 'rbx';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid } from '@material-ui/core';
-import Layout from '@components/Layout';
+import Layout from '@layout';
 import Link from 'next/link';
 
 const useStyles = makeStyles({
