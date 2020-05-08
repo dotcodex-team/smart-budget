@@ -6,10 +6,12 @@ const useStyle = makeStyles({
   root: {},
   input: {
     margin: 20,
-    marginTop: 0
+    marginTop: 0,
+    marginLeft: '15%',
+    marginRight: '15%'
   },
   button: {
-    width: 200,
+    width: 300,
     color: 'white',
     height: 60,
     borderRadius: 30

@@ -25,6 +25,9 @@ const useStyle = makeStyles({
   },
   signInContainer: {
     height: '100%'
+  },
+  signupContainer: {
+    height: '100%'
   }
 });
 
@@ -44,7 +47,14 @@ export default function Login() {
           </Grid>
         </Grid>
         <Grid component={Card} item xs={12} md={5} className={classes.grid2}>
-          <SignUp></SignUp>
+          <Grid
+            container
+            // justify="center"
+            // alignItems="center"
+            className={classes.signupContainer}
+          >
+            <SignUp></SignUp>
+          </Grid>
         </Grid>
       </Grid>
     </>
