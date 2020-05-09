@@ -16,6 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Toolbaar from './components/Toolbaar';
 
 const drawerWidth = 240;
 
@@ -98,7 +99,7 @@ function ResponsiveDrawer(props) {
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -106,10 +107,11 @@ function ResponsiveDrawer(props) {
             className={classes.menuButton}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
+          </IconButton> */}
+          {/* <Typography variant="h6" noWrap>
             Responsive drawer
-          </Typography>
+          </Typography> */}
+          <Toolbaar></Toolbaar>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
