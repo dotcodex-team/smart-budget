@@ -5,7 +5,7 @@ import SignUp from '../components/login/SignUp';
 
 const useStyle = makeStyles({
   root: {
-    background: '#F0F4F3',
+    background: '#e0f2f1',
     color: 'blue',
     height: '100vh',
     width: '100%',
@@ -43,7 +43,7 @@ export default function Login() {
             alignItems="center"
             className={classes.signInContainer}
           >
-            <SignIn></SignIn>
+            <SignIn />
           </Grid>
         </Grid>
         <Grid component={Card} item xs={12} md={5} className={classes.grid2}>
@@ -53,7 +53,7 @@ export default function Login() {
             // alignItems="center"
             className={classes.signupContainer}
           >
-            <SignUp></SignUp>
+            <SignUp />
           </Grid>
         </Grid>
       </Grid>

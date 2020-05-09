@@ -1,15 +1,33 @@
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { Button, makeStyles, Grid } from '@material-ui/core';
+import { Button, makeStyles, Grid, InputAdornment } from '@material-ui/core';
+import { AccountCircle, VpnKey } from '@material-ui/icons';
+import Axios from 'axios';
 
 const useStyle = makeStyles({
-  root: {},
+  root: {
+    '& input': {
+      color: 'gray'
+    }
+  },
   input: {
-    margin: 20,
-    marginTop: 0,
+    margin: 0,
+    marginBottom: 20,
     marginLeft: '15%',
     marginRight: '15%',
-    backgroundColor: '#F4F8F7'
+    border: '5px solid #F4F8F7',
+    backgroundColor: '#F4F8F7',
+    height: 65,
+    '& svg': {
+      color: 'gray'
+    },
+    '&:hover': {
+      '& $underline': {
+        '&::before': {
+          borderBottomColor: 'transparent'
+        }
+      }
+    }
   },
   button: {
     width: 300,
@@ -19,7 +37,7 @@ const useStyle = makeStyles({
   },
   underline: {
     '&::before': {
-      borderBottomWidth: 2,
+      borderBottomWidth: 1,
       borderBottomColor: 'transparent'
     }
   }
@@ -37,10 +55,12 @@ const SignIn = () => {
     // console.log(e.target.value);
     setDatos({ ...datos, [e.target.name]: e.target.value });
   };
-  const enter = e => {
+  const enter = async e => {
     e.preventDefault();
-
-    console.log(`email: ${datos.email} password: ${datos.password}`);
+    const response = await Axios.post('http://localhost:5000/api/auth/login', {
+      email: datos.email,
+      password: datos.password
+    });
   };
 
   return (
@@ -55,7 +75,12 @@ const SignIn = () => {
             onChange={handleChange}
             className={classes.input}
             InputProps={{
-              classes: { underline: classes.underline }
+              classes: { underline: classes.underline },
+              startAdornment: (
+                <InputAdornment position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              )
             }}
           />
           <TextField
@@ -66,7 +91,12 @@ const SignIn = () => {
             onChange={handleChange}
             className={classes.input}
             InputProps={{
-              classes: { underline: classes.underline }
+              classes: { underline: classes.underline },
+              startAdornment: (
+                <InputAdornment position="start">
+                  <VpnKey />
+                </InputAdornment>
+              )
             }}
           />
           <Button
