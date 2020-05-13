@@ -13,7 +13,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
-import Toolbar from '@material-ui/core/Toolbar';
+
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Toolbaar from './components/Toolbaar';
@@ -34,7 +34,8 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth
-    }
+    },
+    background: '#e3f2fd'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -98,8 +99,7 @@ function ResponsiveDrawer(props) {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
-          {/* <IconButton
+        {/* <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -108,11 +108,10 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton> */}
-          {/* <Typography variant="h6" noWrap>
+        {/* <Typography variant="h6" noWrap>
             Responsive drawer
           </Typography> */}
-          <Toolbaar></Toolbaar>
-        </Toolbar>
+        <Toolbaar />
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}

@@ -61,6 +61,7 @@ const SignIn = () => {
       email: datos.email,
       password: datos.password
     });
+    console.log(response.data);
   };
 
   return (

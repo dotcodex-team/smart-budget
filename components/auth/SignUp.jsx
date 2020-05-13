@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-
+import axios from 'axios';
 import { Grid, Button, TextField, Typography } from '@material-ui/core';
-import { makeStyles, theme } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/styles';
 
 const useStyle = makeStyles({
   root: {},
@@ -45,14 +45,25 @@ const SignUp = () => {
     setDatosUp({ ...datosUp, [e.target.name]: e.target.value });
   };
 
-  const enviar = e => {
+  const enviar = async e => {
     e.preventDefault();
     // console.log('jii');
     console.log(`
     nombre : ${datosUp.name}  
     email: ${datosUp.email} 
     password: ${datosUp.password}  `);
-    e.target.reset();
+
+    const response = await axios.post(
+      'http://localhost:5000/api/auth/register',
+      {
+        username: datosUp.name,
+        email: datosUp.email,
+        password: datosUp.password
+      }
+    );
+    console.log(response.data);
+
+    // e.target.reset();
   };
 
   const classes = useStyle();
