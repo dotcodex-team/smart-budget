@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Grid, Card, Typography, Button } from '@material-ui/core';
-import SignIn from '../components/auth/SignIn';
 import Link from 'next/link';
+import SignIn from '../components/auth/SignIn';
 
 const useStyle = makeStyles({
   root: {

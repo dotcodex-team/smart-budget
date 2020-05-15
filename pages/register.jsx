@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Card, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import SignUp from '../components/auth/SignUp';
 import Link from 'next/link';
+import SignUp from '../components/auth/SignUp';
 
 const useStyle = makeStyles({
   root: {
@@ -90,7 +90,7 @@ export default function Register() {
             justify="center"
             className={classes.signUpContainer}
           >
-            <SignUp></SignUp>
+            <SignUp />
           </Grid>
         </Grid>
       </Grid>

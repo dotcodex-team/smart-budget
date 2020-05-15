@@ -1,7 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Avatar from '@material-ui/core/Avatar';
-
 import {
   Toolbar,
   Button,
@@ -9,6 +7,7 @@ import {
   makeStyles,
   Grid
 } from '@material-ui/core';
+import IndAvatar from './IndAvatar';
 
 const useStyle = makeStyles({
   root: {},
@@ -45,7 +44,7 @@ const Toolbaar = () => {
             ))}
           </Grid>
           <Grid item xs={5}>
-            <Avatar alt="Remy Sharp" src="/images/pp.jpg" />
+            <IndAvatar></IndAvatar>
           </Grid>
         </Grid>
       </Toolbar>
